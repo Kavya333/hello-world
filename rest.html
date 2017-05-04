@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+body{
+background-color:grey;
+}
+h1{
+text-align:center;
+color:blue;
+}
+h2{
+text-align:center;
+color:green;
+}
+ul{
+display:none;
+}
+
+</style>
+</head>
+<body>
+<h1><center>Indian Restaurant</center></h1>
+<h2><center>Welcomes You</center></h2>
+
+<form action="#">
+Menu Card :<input type="button" value="Click" onclick="menu()"/>
+<h3>Please select your order</h3>
+Items:<input type="checkbox" id="a" name="food" value="Mushroom" onclick="order(this.id)" unchecked>1<br>
+      <input type="checkbox" id="b" name="food" value="Panneer" onclick="order(this.id)" unchecked>2<br>
+      <input type="checkbox" id="c" name="food" value="Briyani" onclick="order(this.id)" unchecked>3<br>
+      <input type="checkbox" id="d" name="food" value="Mutton" onclick="order(this.id)" unchecked>4<br>
+      <input type="checkbox" id="e" name="food" value="Fish fry" onclick="order(this.id)"unchecked>5<br>
+	  
+<input type="submit" value="Order" onclick="details()">
+</form>
+<ul id="c">Details of Ordered Items:</ul>
+<script>
+function menu()
+{
+document.write("1.Mushroom<br>");
+document.write("2.Panneer<br>");
+document.write("3.Briyani<br>");
+document.write("4.Mutton<br>");
+document.write("5.Fish fry<br>");
+}
+
+function order(elementId)
+{
+var checkbox=document.getElementById(elementId);
+if(checkbox.checked)
+{
+var t=checkbox.value
+add(t)
+}
+}
+function add(val)
+{
+var l=document.getElementById("c");
+var h=document.createElement('li');
+//h.classList.add("hide");
+h.appendChild(document.createTextNode(val))
+l.appendChild(h)
+}
+
+function details()
+{
+var list=document.getElementById("c");
+list.style.display="block";
+}
+
+</script>
+
+</body>
+</html>
+
